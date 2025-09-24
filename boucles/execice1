@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(){
+int N
+printf("veuillez entre votre nombre :");
+scanf("%d",&N);
+int resultat ;
+for(i=0,i<N,n++){
+resultat = resultat + i;
+}
+    return 0 ;
+}
