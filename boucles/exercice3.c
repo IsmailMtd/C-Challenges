@@ -6,8 +6,8 @@ int main() {
     float total = 0.00 ;
     printf("veuillez entrer votre nmbr produit acheter :");
     scanf("%d",&N);
-    for(i=1;i<=N;i++){
-    total = total + prix - prix  * 0.02 *(i-1);
+    for(i=0;i<N;i++){
+    total = total + prix - prix  * 0.02 *(i);
     }
     printf("le Totale est : %.2f DH",total);
     return 0;
