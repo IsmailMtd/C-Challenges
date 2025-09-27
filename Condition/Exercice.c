@@ -12,7 +12,7 @@ if (note < 0 || note > 20) {
         printf("Assez bien\n");
     } else if (note <= 18) {
         printf("Bien\n");
-    } else { // note est 19 ou 20
+    } else { 
         printf("Excellent\n");
     }
 

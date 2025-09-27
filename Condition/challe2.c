@@ -12,7 +12,6 @@ int main() {
     printf("Entrez le nombre d'années à convertir : ");
     scanf("%d", &annees);
 
-    // Affichage du menu
     printf("\n=== MENU DE CONVERSION ===\n");
     printf("1. Convertir en mois\n");
     printf("2. Convertir en jours\n");
@@ -22,7 +21,6 @@ int main() {
     printf("Entrez votre choix (1-5) : ");
     scanf("%d", &choix);
 
-    // Traitement selon le choix
     switch (choix) {
         case 1:
             printf("%d annee(s) = %d mois\n", annees, annees * MOIS_PAR_AN);
