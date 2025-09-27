@@ -1,0 +1,19 @@
+# Ignore executables
+*.exe
+*.out
+*.o
+*.obj
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore debug files
+*.log
+*.dll
+*.so
+*.dylib
+
+# Ignore backup / temporary files
+*~
+*.swp
+*.tmp
