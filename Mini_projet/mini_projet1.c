@@ -1,25 +1,21 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_BOOKS 100
-#define MAX_TITLE_LENGTH 50
-#define MAX_AUTHOR_LENGTH 50
-
-char titles[MAX_BOOKS][MAX_TITLE_LENGTH];
-char authors[MAX_BOOKS][MAX_AUTHOR_LENGTH];
-float prices[MAX_BOOKS];
-int quantities[MAX_BOOKS]; 
+char titles[100][50];
+char authors[100][50];
+float prices[100];
+int quantities[100]; 
 int bookCount = 0;
 
 void addBook() {
-    if (bookCount < MAX_BOOKS) {
+    if (bookCount < 100) {
         printf("Entrez le titre du livre : ");
         getchar(); 
-        fgets(titles[bookCount], MAX_TITLE_LENGTH, stdin);
+        fgets(titles[bookCount], 50, stdin);
         titles[bookCount][strcspn(titles[bookCount], "\n")] = 0; 
 
         printf("Entrez l\'auteur du livre : ");
-        fgets(authors[bookCount], MAX_AUTHOR_LENGTH, stdin);
+        fgets(authors[bookCount], 50, stdin);
         authors[bookCount][strcspn(authors[bookCount], "\n")] = 0; 
 
         printf("Entrez le prix du livre : ");
@@ -51,10 +47,10 @@ void displayBooks() {
 }
 
 void searchBook() {
-    char searchTitle[MAX_TITLE_LENGTH];
+    char searchTitle[50];
     printf("Entrez le titre du livre a rechercher : ");
     getchar(); 
-    fgets(searchTitle, MAX_TITLE_LENGTH, stdin);
+    fgets(searchTitle, 50, stdin);
     searchTitle[strcspn(searchTitle, "\n")] = 0;
 
     for (int i = 0; i < bookCount; i++) {
@@ -71,10 +67,10 @@ void searchBook() {
 }
 
 void updateQuantity() {
-    char updateTitle[MAX_TITLE_LENGTH];
+    char updateTitle[50];
     printf("Entrez le titre du livre a mettre a jour : ");
     getchar(); 
-    fgets(updateTitle, MAX_TITLE_LENGTH, stdin);
+    fgets(updateTitle, 50, stdin);
     updateTitle[strcspn(updateTitle, "\n")] = 0; 
 
     for (int i = 0; i < bookCount; i++) {
@@ -89,10 +85,10 @@ void updateQuantity() {
 }
 
 void deleteBook() {
-    char deleteTitle[MAX_TITLE_LENGTH];
+    char deleteTitle[50];
     printf("Entrez le titre du livre à supprimer : ");
     getchar(); 
-    fgets(deleteTitle, MAX_TITLE_LENGTH, stdin);
+    fgets(deleteTitle, 50, stdin);
     deleteTitle[strcspn(deleteTitle, "\n")] = 0; 
 
     for (int i = 0; i < bookCount; i++) {
