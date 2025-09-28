@@ -9,19 +9,19 @@ int bookCount = 0;
 
 void addBook() {
     if (bookCount < 100) {
-        printf("Entrez le titre du livre : ");
+        printf("Veuillez entrez le titre du livre : ");
         getchar(); 
         fgets(titles[bookCount], 50, stdin);
         titles[bookCount][strcspn(titles[bookCount], "\n")] = 0; 
 
-        printf("Entrez l\'auteur du livre : ");
+        printf("Veuillez entrez l\'auteur du livre : ");
         fgets(authors[bookCount], 50, stdin);
         authors[bookCount][strcspn(authors[bookCount], "\n")] = 0; 
 
-        printf("Entrez le prix du livre : ");
+        printf("Veuillez entrez le prix du livre : ");
         scanf("%f", &prices[bookCount]);
 
-        printf("Entrez la quantite en stock : ");
+        printf("Veuillez entrez la quantite en stock : ");
         scanf("%d", &quantities[bookCount]);
 
         bookCount++;
@@ -48,7 +48,7 @@ void displayBooks() {
 
 void searchBook() {
     char searchTitle[50];
-    printf("Entrez le titre du livre a rechercher : ");
+    printf("Veuillez entrez le titre du livre a rechercher : ");
     getchar(); 
     fgets(searchTitle, 50, stdin);
     searchTitle[strcspn(searchTitle, "\n")] = 0;
@@ -68,14 +68,14 @@ void searchBook() {
 
 void updateQuantity() {
     char updateTitle[50];
-    printf("Entrez le titre du livre a mettre a jour : ");
+    printf("Veuillez entrez le titre du livre a mettre a jour : ");
     getchar(); 
     fgets(updateTitle, 50, stdin);
     updateTitle[strcspn(updateTitle, "\n")] = 0; 
 
     for (int i = 0; i < bookCount; i++) {
         if (strcmp(titles[i], updateTitle) == 0) {
-            printf("Entrez la nouvelle quantite : ");
+            printf("Veuillez entrez la nouvelle quantite : ");
             scanf("%d", &quantities[i]);
             printf("Quantite mise à jour avec succes !\n");
             return;
@@ -86,7 +86,7 @@ void updateQuantity() {
 
 void deleteBook() {
     char deleteTitle[50];
-    printf("Entrez le titre du livre à supprimer : ");
+    printf("Veuillez entrez le titre du livre à supprimer : ");
     getchar(); 
     fgets(deleteTitle, 50, stdin);
     deleteTitle[strcspn(deleteTitle, "\n")] = 0; 
@@ -118,7 +118,7 @@ void totalBooks() {
 int main() {
     int choice;
     do {
-        printf("\n=== Systeme de Gestion de Stock ===\n");
+        printf("\n------------------- menu -------------------\n");
         printf("1. Ajouter un livre au stock\n");
         printf("2. Afficher tous les livres disponibles\n");
         printf("3. Rechercher un livre par son titre\n");
@@ -126,7 +126,7 @@ int main() {
         printf("5. Supprimer un livre du stock\n");
         printf("6. Afficher le nombre total de livres en stock\n");
         printf("7. Quitter\n");
-        printf("Entrez votre choix : ");
+        printf("Veuillez entrez votre choix : ");
         scanf("%d", &choice);
 
         switch (choice) {
