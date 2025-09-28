@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-   int x=0;
+   int x;
    int i=0;
 
    printf("entrer le nombre =");

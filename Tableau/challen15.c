@@ -15,7 +15,6 @@ int main()
     int tab2[num2];
     for (int i = 0; i < num2; i++)
     {
-        
         printf("donner un valeur pour tab[%d] :",i);
         scanf("%d",&tab2[i]);
     }
