@@ -7,16 +7,15 @@ float prices[100];
 int quantities[100]; 
 int bookCount = 0;
 
-void addBook() {
+void addBook() { 
     if (bookCount < 100) {
         printf("Veuillez entrez le titre du livre : ");
         getchar(); 
         fgets(titles[bookCount], 50, stdin);
-        titles[bookCount][strcspn(titles[bookCount], "\n")] = 0; 
 
         printf("Veuillez entrez l\'auteur du livre : ");
         fgets(authors[bookCount], 50, stdin);
-        authors[bookCount][strcspn(authors[bookCount], "\n")] = 0; 
+         
 
         printf("Veuillez entrez le prix du livre : ");
         scanf("%f", &prices[bookCount]);
@@ -51,8 +50,6 @@ void searchBook() {
     printf("Veuillez entrez le titre du livre a rechercher : ");
     getchar(); 
     fgets(searchTitle, 50, stdin);
-    searchTitle[strcspn(searchTitle, "\n")] = 0;
-
     for (int i = 0; i < bookCount; i++) {
         if (strcmp(titles[i], searchTitle) == 0) {
             printf("Livre trouve :\n");
@@ -71,7 +68,7 @@ void updateQuantity() {
     printf("Veuillez entrez le titre du livre a mettre a jour : ");
     getchar(); 
     fgets(updateTitle, 50, stdin);
-    updateTitle[strcspn(updateTitle, "\n")] = 0; 
+
 
     for (int i = 0; i < bookCount; i++) {
         if (strcmp(titles[i], updateTitle) == 0) {
@@ -89,7 +86,7 @@ void deleteBook() {
     printf("Veuillez entrez le titre du livre à supprimer : ");
     getchar(); 
     fgets(deleteTitle, 50, stdin);
-    deleteTitle[strcspn(deleteTitle, "\n")] = 0; 
+    
 
     for (int i = 0; i < bookCount; i++) {
         if (strcmp(titles[i], deleteTitle) == 0) {
